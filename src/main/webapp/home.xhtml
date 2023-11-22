@@ -11,10 +11,22 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:outputLabel for="nombre" value="Nombre"/>
-            <p:inputText id="nombre" value="#{autor.nombre}"/>
-            <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:400px"/>
-            <p:commandButton value="Submit" styleClass="mt-3" disableOnAjax="false"  action="#{autor.crearAutor()}"/>
+            <p:dataTable id="dtAutor" var="autor" value="#{beanAutor.lista}" rowKey="#{autor.id}"
+                rows="10" rowSelectMode="add" selection="#{beanAutor.selectAutor}">
+                <p:column selectionMode="single" exportable="false"/>
+                <p:column headerText="PrimgerNombre">
+                    <h:outputText value ="#{autor.primerNombre}"/>
+                </p:column>
+                <p:column headerText="SegundoNombre">
+                    <h:outputText value ="#{autor.segundoNombre}"/>
+                </p:column>
+                <p:column headerText="PrimerApellido">
+                    <h:outputText value ="#{autor.primerApellido}"/>
+                </p:column>
+                <p:column headerText="SegundoApellido">
+                    <h:outputText value ="#{autor.segundoApellido}"/>
+                </p:column>
+            </p:dataTable>
         </h:form>
     </h:body>
 </f:view>
