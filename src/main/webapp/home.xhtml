@@ -14,7 +14,7 @@
             <p:dataTable id="dtAutor" var="autor" value="#{beanAutor.lista}" rowKey="#{autor.id}"
                 rows="10" rowSelectMode="add" selection="#{beanAutor.selectAutor}">
                 <p:column selectionMode="single" exportable="false"/>
-                <p:column headerText="PrimgerNombre">
+                <p:column headerText="PrimerNombre">
                     <h:outputText value ="#{autor.primerNombre}"/>
                 </p:column>
                 <p:column headerText="SegundoNombre">
